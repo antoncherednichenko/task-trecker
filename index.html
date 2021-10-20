@@ -5,20 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>toDO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="page">
         <div class="card">
-            <div class="crad__header__line"></div>
-            <h1 class="card__title"></h1>
-            <img src="" alt="" class="card__sort__icon">
+            <div class="card__header__line">
+                
+            </div>
+            <h1 class="card__title">To-do list</h1>
+            <button class="card__sort__icon">
+                <svg class="fill" width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="fill" x="2.5" width="2.5" height="12.5" fill="#C4C4C4"/>
+                    <rect class="fill" x="10" y="3.75" width="2.5" height="7.5" transform="rotate(-90 10 3.75)" fill="#C4C4C4"/>
+                    <rect class="fill" x="10" y="8.75" width="2.5" height="10" transform="rotate(-90 10 8.75)" fill="#C4C4C4"/>
+                    <rect class="fill" x="10" y="13.75" width="2.5" height="15" transform="rotate(-90 10 13.75)" fill="#C4C4C4"/>
+                    <path class="fill" d="M3.75 15L0.502405 10.3125L6.9976 10.3125L3.75 15Z" fill="#C4C4C4"/>
+                    </svg>
+                </button>                
             <div class="text__box">
-                <input type="text" class="text__box__area">
-                <button class="delete__element"></button>
+               <div class="text__wrapper">
+                    <input type="text" class="text__box__area">
+                    <button class="delete__element">
+                            <svg class="fill__delete" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="fill__delete" d="M1 1L9 9" stroke="#C4C4C4"/>
+                                <path class="fill__delete" d="M1 9L9 1" stroke="#C4C4C4"/>
+                            </svg>
+                    </button>
+               </div>
             </div>
             <button class="add__element">
-                <div class="plus"></div>
+                <span class="plus">+</span><span class="add__word">Добавить</span>
             </button>
         </div>
     </div>
