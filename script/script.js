@@ -1,3 +1,5 @@
+// --------------Data----------------------------------------------------------------------------------------------------------------------------------
+
 const addBtn = document.querySelector('.add__element')
 const deleteBtn = document.querySelector('.delete__element')
 const textBox = document.querySelector('.text__box')
@@ -7,6 +9,9 @@ const imgUp = document.querySelector('.up')
 let order = 'ASK'
 
 imgDown.classList.add('visible')
+
+// --------------Function for create new element----------------------------------------------------------------------------------------------------------------------------------
+
 
 function createElement(){
     const wrapperDiv = document.createElement('div')
@@ -26,7 +31,12 @@ function createElement(){
     wrapperDiv.append(newBtnDelete)                  
 }
 
+// --------------Creating new alement----------------------------------------------------------------------------------------------------------------------------------
+
 addBtn.addEventListener('click', createElement)
+
+// --------------Sorting elements----------------------------------------------------------------------------------------------------------------------------------
+
 
 sortBtn.addEventListener('click', e => {
     if (order === 'ASK'){
@@ -53,4 +63,3 @@ sortBtn.addEventListener('click', e => {
     imgUp.classList.toggle('visible')
     }
 })
-
