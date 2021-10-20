@@ -120,6 +120,10 @@ button{
     justify-content: center;
 }
 
+.down, .up{
+    display: none;
+}
+
 .card__sort__icon:hover .fill{
     fill: black;
 }
@@ -134,4 +138,9 @@ button{
 }
 .add__element:hover .plus{
     background-color: #AA68FE;
+}
+
+
+.visible{
+    display: block;
 }
