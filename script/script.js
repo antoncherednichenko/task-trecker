@@ -10,6 +10,17 @@ let order = 'ASK'
 
 imgDown.classList.add('visible')
 
+// --------------Function for add event listener on all delete btns----------------------------------------------------------------------------------------------------------------------------------
+
+function addListener(){
+    const arr = document.querySelectorAll('.delete__element')
+    arr.forEach(el => {
+        el.addEventListener('click', e => {
+            e.target.parentElement.remove()
+        })
+    })
+}
+
 // --------------Function for create new element----------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -25,10 +36,8 @@ function createElement(){
     const newBtnDelete = document.createElement('button')
     newBtnDelete.classList.add('delete__element')
     newBtnDelete.innerText = '×'
-    newBtnDelete.addEventListener('click', e => {
-        e.target.parentElement.remove()
-    })
-    wrapperDiv.append(newBtnDelete)                  
+    wrapperDiv.append(newBtnDelete)  
+    addListener()                
 }
 
 // --------------Creating new alement----------------------------------------------------------------------------------------------------------------------------------
@@ -36,7 +45,6 @@ function createElement(){
 addBtn.addEventListener('click', createElement)
 
 // --------------Sorting elements----------------------------------------------------------------------------------------------------------------------------------
-
 
 sortBtn.addEventListener('click', e => {
     if (order === 'ASK'){
