@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+img{
+    display: block;
+}
+button{
+    display: block;
+}
+.page {
+    width: 100vw;
+    overflow: hidden;
+}
+
+
+.card {
+    overflow: hidden;
+    margin: 15% auto;
+    width: 336px;
+    padding-bottom: 19px;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+.card__header__line{
+    width: 120%;
+    height: 28px;
+    background-color: #FFDC40;
+}
+
+.card__title {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+    margin-top: 13px;
+}
+.card__sort__icon {
+    width: 25px;
+    margin-top: 16px;
+    position: relative;
+    left: 280px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.text__box {
+    width: 286px;
+    margin: 11px auto 0 auto;
+    padding: 10px 0;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+.text__wrapper{
+    display: flex;
+    align-items: center;
+}
+.text__wrapper:not(:last-child){
+    margin-bottom: 20px;
+}
+.text__box__area {
+    width: 83%;
+    border: none;
+    outline: none;
+    padding-left: 27px; 
+}
+.delete__element {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 20px;
+}
+.add__element {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    margin: 18px auto 0 auto;
+    width: 150px;
+    height: 42px;
+    border: none;
+    border-radius: 71px;
+    background-color: #833AE0;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.add__word{
+    display: block;
+    color: #fff;
+    margin-left: 10px;
+}
+.plus {
+    z-index: 2;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #9953F1;
+    align-items: center;
+    justify-content: center;
+}
+
+.down, .up{
+    display: none;
+}
+
+.card__sort__icon:hover .fill{
+    fill: black;
+}
+.delete__element:hover{
+    background-color: #833AE0;
+    border: none;
+    color: #fff;
+}
+
+.add__element:hover{
+    background-color: #9953F1;
+}
+.add__element:hover .plus{
+    background-color: #AA68FE;
+}
+
+
+.visible{
+    display: block;
+}
