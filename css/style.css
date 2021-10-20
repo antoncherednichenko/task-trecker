@@ -88,6 +88,7 @@ button{
     align-items: center;
     cursor: pointer;
     transition: 0.5s;
+    font-size: 20px;
 }
 .add__element {
     z-index: 1;
@@ -125,9 +126,7 @@ button{
 .delete__element:hover{
     background-color: #833AE0;
     border: none;
-}
-.delete__element:hover .fill__delete{
-    stroke: #fff;
+    color: #fff;
 }
 
 .add__element:hover{
