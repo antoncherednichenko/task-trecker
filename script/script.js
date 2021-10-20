@@ -56,8 +56,8 @@ sortBtn.addEventListener('click', e => {
     textBox.innerHTML = ''
     textBox.append(...sorted)
     order = 'DASK'
-    imgDown.classList.toggle('visible')
-    imgUp.classList.toggle('visible')
+    imgDown.classList.add('visible')
+    imgUp.classList.remove('visible')
     }else if(order === 'DASK'){
         const elementsArray = document.querySelectorAll('.text__wrapper')
         let arrayForSort = Array.of(...elementsArray)
@@ -67,7 +67,7 @@ sortBtn.addEventListener('click', e => {
     textBox.innerHTML = ''
     textBox.append(...sorted)
     order = 'ASK'
-    imgDown.classList.toggle('visible')
-    imgUp.classList.toggle('visible')
+    imgDown.classList.remove('visible')
+    imgUp.classList.add('visible')
     }
 })
