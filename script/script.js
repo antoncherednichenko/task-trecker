@@ -34,7 +34,7 @@ function addListener(){
 }
 
 
-// --------------Function for create new element----------------------------------------------------------------------------------------------------------------------------------
+// --------------Function for creating new element----------------------------------------------------------------------------------------------------------------------------------
 
 
 function createElement(){
@@ -52,7 +52,8 @@ function createElement(){
     wrapperDiv.append(newBtn)
     
     addListener()
-    showMassege()                
+    showMassege()
+    DragDrop()               
 }
 
 // --------------Creating new alement----------------------------------------------------------------------------------------------------------------------------------
@@ -87,3 +88,63 @@ sortBtn.addEventListener('click', e => {
     }
 })
 
+// --------------Sorting elements----------------------------------------------------------------------------------------------------------------------------------
+
+function DragDrop(){
+    const tasksListElement = document.querySelector('.text__box');
+    const taskElements = tasksListElement.querySelectorAll('.text__wrapper');
+    
+    for (const task of taskElements) {
+      task.draggable = true;
+    }
+    
+    tasksListElement.addEventListener(`dragstart`, (evt) => {
+      evt.target.classList.add(`selected`);
+      evt.target.querySelector('input').classList.add('selected')
+    });
+    
+    tasksListElement.addEventListener(`dragend`, (evt) => {
+      evt.target.classList.remove(`selected`);
+      evt.target.querySelector('input').classList.remove('selected')
+      
+    });
+    
+    const getNextElement = (cursorPosition, currentElement) => {
+      const currentElementCoord = currentElement.getBoundingClientRect();
+      const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+      
+      const nextElement = (cursorPosition < currentElementCenter) ?
+        currentElement :
+        currentElement.nextElementSibling;
+      
+      return nextElement;
+    };
+
+    
+    
+    tasksListElement.addEventListener(`dragover`, (evt) => {
+      evt.preventDefault();
+      
+      const activeElement = tasksListElement.querySelector(`.selected`);
+      const currentElement = evt.target;
+      const isMoveable = activeElement !== currentElement &&
+        currentElement.classList.contains('text__wrapper');
+        
+      if (!isMoveable) {
+        return;
+      }
+      
+      const nextElement = getNextElement(evt.clientY, currentElement);
+      
+      if (
+        nextElement && 
+        activeElement === nextElement.previousElementSibling ||
+        activeElement === nextElement
+      ) {
+        return;
+      }
+            
+        tasksListElement.insertBefore(activeElement, nextElement);
+    });
+    
+}

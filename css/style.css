@@ -158,3 +158,13 @@ button{
     text-align: center;
     display: none;
 }
+
+.selected {
+    opacity: 1;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+    background-color: #FFDC40;
+    color: #FFDC40;
+    border: none;
+    cursor: pointer;
+}
