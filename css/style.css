@@ -58,6 +58,7 @@ button{
     transition: 0.5s;
 }
 .text__box {
+    overflow: hidden;
     width: 286px;
     margin: 11px auto 0 auto;
     padding: 10px 0;
@@ -160,11 +161,11 @@ button{
 }
 
 .selected {
-    opacity: 1;
+    width: 160px;
     border: 1px solid #C4C4C4;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #FFDC40;
     color: #FFDC40;
     border: none;
-    
+    transform: scale(1.5, 1.5);
 }

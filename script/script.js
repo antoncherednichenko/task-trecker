@@ -88,7 +88,7 @@ sortBtn.addEventListener('click', e => {
     }
 })
 
-// --------------Sorting elements----------------------------------------------------------------------------------------------------------------------------------
+// --------------drag and drop function----------------------------------------------------------------------------------------------------------------------------------
 
 function DragDrop(){
     const tasksListElement = document.querySelector('.text__box');
@@ -99,7 +99,6 @@ function DragDrop(){
     }
     
     tasksListElement.addEventListener(`dragstart`, (evt) => {
-        tasksListElement.style.cursor = 'grabbing'
       evt.target.classList.add(`selected`);
       evt.target.querySelector('input').classList.add('selected')
     });
@@ -125,7 +124,6 @@ function DragDrop(){
     
     tasksListElement.addEventListener(`dragover`, (evt) => {
       evt.preventDefault();
-      
       const activeElement = tasksListElement.querySelector(`.selected`);
       const currentElement = evt.target;
       const isMoveable = activeElement !== currentElement &&
@@ -149,3 +147,4 @@ function DragDrop(){
     });
     
 }
+
