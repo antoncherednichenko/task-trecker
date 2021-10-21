@@ -10,17 +10,6 @@ const cross = document.querySelector('.cross')
 const massege = document.querySelector('.massege')
 let order = 'ASK'
 
-// -------------- function for show massege----------------------------------------------------------------------------------------------------------------------------------
-
-function showMassege(){
-    const arrayForCheck = document.querySelectorAll('.text__wrapper')
-    if(arrayForCheck.length === 0){
-        massege.style.display = 'block'
-    }else{
-        massege.style.display = 'none'
-    }
-}
-
 // --------------Function for add event listener on all delete btns----------------------------------------------------------------------------------------------------------------------------------
 
 function addListener(){
@@ -28,7 +17,6 @@ function addListener(){
     arr.forEach(el => {
         el.addEventListener('click', e => {
             e.target.parentElement.remove()
-            showMassege()
         })
     })
 }
@@ -52,7 +40,6 @@ function createElement(){
     wrapperDiv.append(newBtn)
     
     addListener()
-    showMassege()
     DragDrop()               
 }
 
@@ -74,6 +61,7 @@ sortBtn.addEventListener('click', e => {
     order = 'DASK'
     imgDown.classList.add('visible')
     imgUp.classList.remove('visible')
+    
     }else if(order === 'DASK'){
         const elementsArray = document.querySelectorAll('.text__wrapper')
         let arrayForSort = Array.of(...elementsArray)

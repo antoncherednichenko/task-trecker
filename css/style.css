@@ -157,7 +157,7 @@ button{
     transition: 0.5s;
     color: #C4C4C4;
     text-align: center;
-    display: none;
+    display: block;
 }
 
 .selected {
