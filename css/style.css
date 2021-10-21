@@ -89,6 +89,7 @@ button{
     cursor: pointer;
     transition: 0.5s;
     font-size: 20px;
+    background: url('/task-trecker/img/delete-icon.svg') no-repeat center;
 }
 .add__element {
     z-index: 1;
@@ -128,9 +129,9 @@ button{
     fill: black;
 }
 .delete__element:hover{
+    background: url('/task-trecker/img/delete-icon-white.svg') no-repeat center;
     background-color: #833AE0;
     border: none;
-    color: #fff;
 }
 
 .add__element:hover{
@@ -140,7 +141,20 @@ button{
     background-color: #AA68FE;
 }
 
-
 .visible{
     display: block;
+}
+.unvisible{
+    display: none;
+}
+
+.border__new{
+    border-top:  1px solid #C4C4C4;
+}
+
+.massege{
+    transition: 0.5s;
+    color: #C4C4C4;
+    text-align: center;
+    display: none;
 }

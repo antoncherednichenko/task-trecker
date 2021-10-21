@@ -6,9 +6,20 @@ const textBox = document.querySelector('.text__box')
 const sortBtn = document.querySelector('.card__sort__icon')
 const imgDown = document.querySelector('.down')
 const imgUp = document.querySelector('.up')
+const cross = document.querySelector('.cross')
+const massege = document.querySelector('.massege')
 let order = 'ASK'
 
-imgDown.classList.add('visible')
+// -------------- function for show massege----------------------------------------------------------------------------------------------------------------------------------
+
+function showMassege(){
+    const arrayForCheck = document.querySelectorAll('.text__wrapper')
+    if(arrayForCheck.length === 0){
+        massege.style.display = 'block'
+    }else{
+        massege.style.display = 'none'
+    }
+}
 
 // --------------Function for add event listener on all delete btns----------------------------------------------------------------------------------------------------------------------------------
 
@@ -17,9 +28,11 @@ function addListener(){
     arr.forEach(el => {
         el.addEventListener('click', e => {
             e.target.parentElement.remove()
+            showMassege()
         })
     })
 }
+
 
 // --------------Function for create new element----------------------------------------------------------------------------------------------------------------------------------
 
@@ -31,13 +44,15 @@ function createElement(){
 
     const newInput = document.createElement('input')
     newInput.classList.add('text__box__area')
+    // newInput.classList.add('border__new')
     wrapperDiv.append(newInput)
 
-    const newBtnDelete = document.createElement('button')
-    newBtnDelete.classList.add('delete__element')
-    newBtnDelete.innerText = '×'
-    wrapperDiv.append(newBtnDelete)  
-    addListener()                
+    const newBtn = document.createElement('button')
+    newBtn.classList.add('delete__element')
+    wrapperDiv.append(newBtn)
+    
+    addListener()
+    showMassege()                
 }
 
 // --------------Creating new alement----------------------------------------------------------------------------------------------------------------------------------
@@ -71,3 +86,4 @@ sortBtn.addEventListener('click', e => {
     imgUp.classList.add('visible')
     }
 })
+
