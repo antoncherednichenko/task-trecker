@@ -99,6 +99,7 @@ function DragDrop(){
     }
     
     tasksListElement.addEventListener(`dragstart`, (evt) => {
+        tasksListElement.style.cursor = 'grabbing'
       evt.target.classList.add(`selected`);
       evt.target.querySelector('input').classList.add('selected')
     });
