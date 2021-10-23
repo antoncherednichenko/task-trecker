@@ -12,12 +12,19 @@ let order = 'ASK'
 
 // --------------Function for add event listener on all delete btns----------------------------------------------------------------------------------------------------------------------------------
 
+function deleteEL(e){
+  const arr = document.querySelectorAll('.text__wrapper')
+  if (arr.length !== 1){
+    e.target.parentElement.remove()
+  }else{
+    return
+  }
+}
+
 function addListener(){
     const arr = document.querySelectorAll('.delete__element')
     arr.forEach(el => {
-        el.addEventListener('click', e => {
-            e.target.parentElement.remove()
-        })
+        el.addEventListener('click', deleteEL)
     })
 }
 
@@ -30,6 +37,10 @@ function createElement(){
     wrapperDiv.classList.add('text__wrapper')
     textBox.append(wrapperDiv)
 
+    const dragIcon = document.createElement('div')
+    dragIcon.classList.add('drag__icon')
+    wrapperDiv.append(dragIcon)
+
     const newInput = document.createElement('input')
     newInput.classList.add('text__box__area')
     // newInput.classList.add('border__new')
@@ -40,7 +51,7 @@ function createElement(){
     wrapperDiv.append(newBtn)
     
     addListener()
-    DragDrop()               
+    dragDrop()              
 }
 
 // --------------Creating new alement----------------------------------------------------------------------------------------------------------------------------------
@@ -54,7 +65,7 @@ sortBtn.addEventListener('click', e => {
     const elementsArray = document.querySelectorAll('.text__wrapper')
     let arrayForSort = Array.of(...elementsArray)
     const sorted = arrayForSort.sort((a, b) => {
-        return a.querySelector('input').value.charCodeAt(0) - b.querySelector('input').value.charCodeAt(0)
+        return a.querySelector('input').value.toLowerCase().charCodeAt(0) - b.querySelector('input').value.toLowerCase().charCodeAt(0)
     })
     textBox.innerHTML = ''
     textBox.append(...sorted)
@@ -66,7 +77,7 @@ sortBtn.addEventListener('click', e => {
         const elementsArray = document.querySelectorAll('.text__wrapper')
         let arrayForSort = Array.of(...elementsArray)
         const sorted = arrayForSort.sort((a, b) => {
-        return b.querySelector('input').value.charCodeAt(0) - a.querySelector('input').value.charCodeAt(0)
+        return b.querySelector('input').value.toLowerCase().charCodeAt(0) - a.querySelector('input').value.toLowerCase().charCodeAt(0)
     })
     textBox.innerHTML = ''
     textBox.append(...sorted)
@@ -78,7 +89,7 @@ sortBtn.addEventListener('click', e => {
 
 // --------------drag and drop function----------------------------------------------------------------------------------------------------------------------------------
 
-function DragDrop(){
+function dragDrop(){
     const tasksListElement = document.querySelector('.text__box');
     const taskElements = tasksListElement.querySelectorAll('.text__wrapper');
     
@@ -135,4 +146,3 @@ function DragDrop(){
     });
     
 }
-

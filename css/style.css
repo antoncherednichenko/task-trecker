@@ -18,6 +18,7 @@ img{
 button{
     display: block;
 }
+
 .page {
     width: 100vw;
     overflow: hidden;
@@ -73,10 +74,10 @@ button{
     margin-bottom: 20px;
 }
 .text__box__area {
-    width: 83%;
+    width: 65%;
     border: none;
     outline: none;
-    padding-left: 27px; 
+    padding-left: 10px;
 }
 .delete__element {
     width: 20px;
@@ -161,11 +162,34 @@ button{
 }
 
 .selected {
-    width: 160px;
+    
     border: 1px solid #C4C4C4;
     border-radius: 20px;
-    background-color: #FFDC40;
-    color: #FFDC40;
+    
+   
+}
+
+/* div.selected{
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.150);
+} */
+.selected input{
     border: none;
-    transform: scale(1.5, 1.5);
+    background: none;
+}
+
+.selected[draggable = 'true']{
+    opacity: 0.7;
+   background-color: #FFDC40;
+}
+
+.drag__icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 27px;
+    background: url('/task-trecker/img/drag-icon.svg') no-repeat center;
+}
+
+.drag__icon:hover{
+    background: url('/task-trecker/img/drag-icon-black.svg') no-repeat center;
+    cursor: grab;
 }
